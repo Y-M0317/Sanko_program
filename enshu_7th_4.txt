@@ -1,0 +1,33 @@
+void setup(){
+size(480, 480);
+}
+
+void draw(){
+  background(255);
+  if(mousePressed){
+    if(mouseButton == LEFT){
+      fill(255, 0, 0);
+    }else if(mouseButton == CENTER){
+      fill(0, 0, 255);
+    }else if(mouseButton == RIGHT){
+      fill(255, 255, 0);
+
+    }
+  }
+  ellipse(mouseX - 50, mouseY - 50, 100, 100);
+  if(mousePressed){
+    if(mouseButton == LEFT){
+      fill(0, 255, 0);
+      mouseX++;
+    }else if(mouseButton == CENTER){
+      fill(255, 0, 255);
+      mouseY++;
+    }else if(mouseButton == RIGHT){
+      fill(0, 255, 255);
+      mouseX--;
+      mouseY--;
+    }
+  }  
+  rect(mouseX + 50, mouseY + 50, 100, 100);
+  fill(255);
+}

@@ -1,0 +1,12 @@
+int size;
+
+void setup(){
+  size(480, 480);
+  size = 2;
+}
+
+void draw(){
+  triangle(50, 50, 100, 100, 50, 100);
+  scale(2);
+  triangle(50, 50/size, 100, 100*3/4, 50, 100*3/4);
+}

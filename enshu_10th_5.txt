@@ -1,0 +1,13 @@
+void setup(){
+  size(480, 480);
+}
+
+void draw(){
+  translate(mouseX, mouseY);
+  if(mousePressed){
+  }else{
+    scale(mouseX/120, mouseY/120);
+  }
+  rectMode(CENTER);
+  rect(0, 0, 100, 50);
+}

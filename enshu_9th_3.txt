@@ -1,0 +1,16 @@
+int x, y;
+
+void setup(){
+  size(480, 480);
+  x = 0;
+  y = 0;
+}
+
+void draw(){
+  background(255);
+  pushMatrix();
+  translate(mouseX, mouseY);
+  ellipse(x, y, 100, 100);
+  popMatrix();
+  rect(80, 60, 100, 50);
+}

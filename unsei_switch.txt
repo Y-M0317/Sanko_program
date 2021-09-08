@@ -1,0 +1,10 @@
+// 演習問題
+
+String unsei = "凶";
+
+switch(unsei){
+  case "大吉": println("すごくいいですね");     break;
+  case   "吉": println("いいですね");           break;
+  case "小吉": println("まぁまぁいいですね");   break;
+  case   "凶": println("ちょっとヤバいですね"); break;
+}

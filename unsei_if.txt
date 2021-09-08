@@ -1,0 +1,12 @@
+// 演習問題
+
+String unsei = "凶";
+
+if(unsei == "大吉")
+  println("すごくいいですね");
+else if(unsei == "吉")
+  println("いいですね");
+else if(unsei == "小吉")
+  println("まぁまぁいいですね");
+else if(unsei == "凶")
+  println("ちょっとヤバいですね");

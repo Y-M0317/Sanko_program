@@ -1,0 +1,7 @@
+void setup(){
+  size(480, 480);
+}
+
+void draw(){
+  triangle(50, 50, 100, 100, 50, 100);
+}

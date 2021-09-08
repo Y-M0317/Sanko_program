@@ -1,0 +1,23 @@
+int a = 1;
+println("インクリメント演算子が後ろにあると");
+println(a++);
+println(a++);
+println(a++);
+
+int b = 1;
+println("インクリメント演算子が最初にあると");
+println(++b);
+println(++b);
+println(++b);
+
+int c = 1;
+println("デクリメント演算子が後ろにあると");
+println(c--);
+println(c--);
+println(c--);
+
+int d = 1;
+println("デクリメント演算子が最初にあると");
+println(--d);
+println(--d);
+println(--d);

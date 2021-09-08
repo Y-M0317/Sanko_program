@@ -1,0 +1,16 @@
+char moji;
+
+void setup(){
+  size(480, 550);
+}
+
+void draw(){
+  background(255);
+  if(keyPressed){
+    moji = key;
+  }
+  textAlign(CENTER, CENTER);
+  textSize(400);
+  fill(0);
+  text(moji, width/2, height/2);
+}

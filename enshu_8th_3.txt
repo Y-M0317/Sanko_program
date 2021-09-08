@@ -1,0 +1,32 @@
+int x, y;
+
+void setup(){
+  size(480, 480);
+  x = width/2;
+  y = height/2;
+}
+
+void draw(){
+  background(255);
+  if(keyPressed){
+    if(key == 'y'){
+      fill(255, 255, 0);
+    }else if(key == 'b'){
+      fill(0, 0, 255);
+    }else if(key == 'r'){
+      fill(255, 0, 0);
+    }else if(key == CODED){
+      if(keyCode == UP){
+        y--;
+      }else if(keyCode == DOWN){
+        y++;
+      }else if(keyCode == LEFT){
+        x--;
+      }else if(keyCode == RIGHT){
+        x++;
+      }
+    } 
+  }
+  ellipse(x, y, 100, 100);
+  fill(255);
+}

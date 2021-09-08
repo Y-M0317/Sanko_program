@@ -1,0 +1,36 @@
+int x, y, vx, vy;//玉の位置と速度の管理
+int sx;//跳ね返すための板の座標の管理
+
+void setup() {
+  size(480, 480);
+  x = width/2;
+  y = 0;
+  vx = 1;
+  vy = 3;
+  sx = x;
+}
+
+void draw() {
+  background(255);
+  fill(0);
+  ellipse(x, y, 20, 20);
+  rect(sx, 400, 50, 20);
+  x = x + vx;
+  y = y + vy;
+  if (x > 480 || x < 0) {
+    vx = -vx;
+  } else if (y <= 0) {
+    vy = -vy;
+  }else if (y > 480) {
+    y -= 480;
+  }
+  if (keyPressed) {
+    if (keyCode == LEFT)
+      sx -= 5;
+    else if (keyCode == RIGHT)
+      sx += 5;
+  }
+  if (y > 400 && y < 420 && x > sx && x < sx + 50){
+    vy = -vy;
+  }
+}
