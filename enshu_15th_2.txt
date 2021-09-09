@@ -1,0 +1,10 @@
+PImage img;
+
+void setup(){
+  size(280, 280);
+  img = loadImage("azaraku.jpg");
+}
+
+void draw(){
+  image(img, 0, 0, mouseX, mouseY);
+}
