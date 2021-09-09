@@ -1,0 +1,22 @@
+PFont f;
+
+void setup(){
+  size(480, 480);
+  f = createFont("MeiryoUI-BoldItalic-32.vlw", 32);
+}
+
+void draw(){
+  background(255);
+  textFont(f);
+  textAlign(CENTER);
+  fill(0);
+  if(keyPressed){
+    if(key == 'a'){
+      textAlign(CENTER);
+      text("Aページ", width/2, height/2);
+    }else if(key == 'b'){
+      text("Bページ", width/2, height/2);
+    }else if(key == 'c')
+      text("Cページ", width/2, height/2);
+  }
+}

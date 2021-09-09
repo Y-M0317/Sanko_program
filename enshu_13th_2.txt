@@ -1,0 +1,27 @@
+int x, y;
+
+void setup() {
+  size(480, 480);
+  x = width/2;
+  y = height/2;
+}
+
+void draw() {
+  rect(x, y, 100, 100);
+  if (keyPressed) {
+    switch(keyCode) {
+    case UP: 
+      y--; 
+      break;
+    case DOWN: 
+      y++; 
+      break;
+    case LEFT: 
+      x--; 
+      break;
+    case RIGHT: 
+      x++; 
+      break;
+    }
+  }
+}

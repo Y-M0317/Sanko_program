@@ -1,0 +1,80 @@
+void setup(){
+  size(480, 480);
+}
+
+void draw(){
+  
+  //車用の信号
+  fill(0, 0, 255);
+  ellipse(100, 100, 100, 100);
+  fill(255, 255, 0);
+  ellipse(210, 100, 100, 100);
+  fill(255, 0, 0);
+  ellipse(320, 100, 100, 100);
+  noFill();
+  rect(45, 45, 330, 110);
+  beginShape();
+  vertex(25, 100);
+  vertex(40, 160);
+  vertex(380, 160);
+  vertex(395, 100);
+  vertex(380, 40);
+  vertex(40, 40);
+  endShape(CLOSE);
+  line(155, 45, 155, 155);
+  line(265, 45, 265, 155);
+  
+  //ここから歩行者信号
+  fill(255, 0, 0);
+  rect(155, 190, 100, 100);
+  fill(0, 0, 255);
+  rect(155, 310, 100, 100);
+  noFill();
+  rect(145, 180, 120, 120);
+  rect(145, 300, 120, 120);
+  fill(255, 255, 0);
+  ellipse(205, 210, 20, 20);
+  
+  //ここから蛇足
+  beginShape();
+  vertex(185, 225);
+  vertex(180, 245);
+  vertex(185, 247);
+  vertex(190, 230);
+  vertex(195, 230);
+  vertex(195, 270);
+  vertex(202, 270);
+  vertex(202, 255);
+  vertex(209, 255);
+  vertex(209, 270);
+  vertex(216, 270);
+  vertex(216, 230);
+  vertex(221, 230);
+  vertex(226, 247);
+  vertex(231, 245);
+  vertex(226, 225);
+  endShape(CLOSE);
+
+  ellipse(205, 330, 20, 20);
+  beginShape();
+  vertex(200, 345);
+  vertex(200, 355);
+  vertex(180, 365);
+  vertex(182, 370);
+  vertex(200, 362);
+  vertex(200, 380);
+  vertex(180, 390);
+  vertex(183, 395);
+  vertex(205, 385);
+  vertex(225, 390);
+  vertex(227, 385);
+  vertex(210, 380);
+  vertex(210, 362);
+  vertex(220, 370);
+  vertex(220, 378);
+  vertex(225, 378);
+  vertex(225, 367);
+  vertex(210, 355);
+  vertex(210, 345);
+  endShape(CLOSE);
+}

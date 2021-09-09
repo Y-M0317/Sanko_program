@@ -1,0 +1,11 @@
+void setup(){
+  size(480, 240);
+}
+
+void draw(){
+  for(int i = 0; i < 10; i++){
+    for(int j = 0; j < 5; j++){
+      ellipse(24 + 48*i, 24 + 48*j, 48, 48);
+    }
+  }
+}

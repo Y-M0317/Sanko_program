@@ -1,0 +1,26 @@
+int x, y, vx, vy, counter;
+
+void setup(){
+  size(480, 480);
+        x = width/2;
+        y = height/2;
+       vx = 3;
+       vy = 4;
+  counter = 0;
+}
+
+void draw(){
+  background(255);
+  fill(0);
+  text("壁に当たった回数：" + counter, 20, 20);
+  ellipse(x, y, 30, 30);
+  x += vx;
+  y += vy;
+  if(x > width || x < 0){
+    vx = -vx;
+    counter++;
+  }else if(y < 0 || y > height){
+    vy = -vy;
+    counter++;
+  }
+}
