@@ -1,0 +1,17 @@
+import processing.video.*;
+
+Movie mov;
+
+void setup(){
+  size(640, 360);
+  mov = new Movie(this, "bird1_small.mp4");
+  mov.loop();
+}
+
+void movieEvent(Movie m){
+  m.read();
+}
+
+void draw(){
+  image(mov, 0, 0, 640, 360);
+}
