@@ -1,0 +1,44 @@
+void setup(){
+  size(480, 480);
+    z = new Zukei("四角", 50, 50);
+  }
+  
+}
+
+void draw(){
+    z.sentaku();
+  }
+  
+}
+
+class Zukei{
+  String k;
+  int x, y;
+  
+  Zukei(String katachi, int X, int Y){
+    k = katachi;
+    x = X;
+    y = Y;
+  }
+  
+  void maru(){
+    ellipse(x, y, 100, 100);
+  }
+  
+  void sankaku(){
+    triangle(x, y, 100 + x, 100 + y, 100 + x, y);
+  }
+  
+  void shikaku(){
+    rect(x, y, 100, 50);
+  }
+  
+  void sentaku(){
+    if(k == "丸")
+      maru();
+    if(k == "三角")
+      sankaku();
+    if(k == "四角")
+      shikaku();
+  }
+}
