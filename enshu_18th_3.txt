@@ -1,0 +1,14 @@
+int c;
+
+void setup(){
+  c = sub(2, 4);
+}
+
+void draw(){
+  print(c);
+  stop();
+}
+
+int sub(int a, int b){
+  return a - b;
+}

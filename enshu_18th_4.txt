@@ -1,0 +1,14 @@
+int d;
+
+void setup(){
+  d = cal(2, 4, 3);
+}
+
+void draw(){
+  print(d);
+  stop();
+}
+
+int cal(int a, int b, int c){
+  return a - b * c;
+}
