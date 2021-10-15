@@ -1,0 +1,17 @@
+int x, y;
+
+void setup(){
+  size(480, 480);
+}
+
+void draw(){
+  background(255);
+  if(mousePressed == true){
+    x = width/2;
+    y = height/2;
+  } else {
+    x = mouseX;
+    y = mouseY;
+  }
+  ellipse(x, y, 100, 100);
+}

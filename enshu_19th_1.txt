@@ -1,0 +1,13 @@
+int s;
+
+void setup(){
+  size(480, 480);
+  s = 100;
+}
+
+void draw(){
+  ellipse(width/2, height/2, s, s);
+  if(mousePressed == true){
+    s++;
+  }
+}
