@@ -1,0 +1,69 @@
+int my_machinex;          //自機のx座標位置
+int my_bulx, my_buly;     //弾丸のx座標位置
+int enemyx, enemyy;       //敵機の座標位置
+int e_HP;                 //敵機の耐久度
+boolean fire;             //弾丸の射出管理
+
+void setup() {
+  size(480, 480);
+  my_machinex = width/2 - 25;
+  my_bulx = my_machinex + 25;
+  my_buly = 425;
+  enemyx = 140;
+  enemyy = 30;
+  e_HP = 1;
+}
+
+void draw() {
+  background(0);
+  textAlign(CENTER, CENTER);//文字配置は縦横中心に
+  //上の変数を代入して以下のものを作成しましょう。(Step1)
+  ellipse(my_bulx, my_buly, 25, 25);//弾丸
+  rect(enemyx, enemyy, 200, 100);//敵機
+  rect(my_machinex, 400, 50, 50);//自機
+  text("EnemyLife:" + e_HP, 50, 30);//敵のライフ表示
+  //ここまで（Step1）
+
+  //ここから自機の操作を記入(Step2)
+  if (keyPressed) { //キーが押された
+    if (key == CODED) { //キーとしてコードが押された
+      if (keyCode == LEFT && my_machinex > 0) { //"コードとして左が押された" かつ "自機のx座標が0より大きい"
+        my_machinex--;//自機を左に移動させる
+        if (fire != true) { //弾丸が発射されていない
+          my_bulx--;//弾丸の移動
+        }
+      } else if (keyCode == RIGHT && my_machinex < width - 50) { //"コードとして右が押された" かつ "自機のx座標がwidth-50より小さい"
+        my_machinex++;//自機を右に移動させる
+        if (fire != true) { //弾丸が発射されていない
+          my_bulx++;//弾丸の移動
+        }
+      }
+    } else if (key == ' ') {//スペースキーが押された(Step3)
+      fire = true;//弾丸が発射される(Step3)
+    }
+  }
+  //ここまで(Step2)
+
+  //ここから弾丸の射出の制御を記入(Step3)
+  if (fire == true) {//弾丸が発射されたら
+    my_buly -= 1;//弾丸の移動をさせる
+  }
+  //ここまで(Step3)
+
+  //ここから弾丸と敵機との当たり判定及び初期化の設定(Step4)
+  if (my_bulx >= enemyx && my_bulx <= enemyx+200 && my_buly >= enemyy && my_buly <= enemyy+100) {//敵機の領域に弾丸が入ったら
+    e_HP--;//敵のHPを1減らす
+  }
+
+  if (my_buly == 0 || (my_bulx >= enemyx && my_bulx <= enemyx+200 && my_buly >= enemyy && my_buly <= enemyy+100)) {//"自機の位置がwindowの一番上に行く" または "敵に当たった" ら
+    my_bulx = my_machinex + 25;//弾丸のx座標を初期値に戻す
+    my_buly = 425;//弾丸のy座標を初期値に戻す
+    fire = false;//弾丸の発射を初期値に戻す
+  }
+
+  if (e_HP == 0) {//敵のHPが 0 になったら
+    fill(255);//文字の色を"白"にする
+    text("Game Clear!!", width/2, height/2);//"Game Clear!!"と中央に表示する。
+  }
+  //ここまで(Step4)
+}
