@@ -1,0 +1,43 @@
+メインタブ
+
+Taiko_note t;
+color aka, ao, kiiro, midori;
+
+void setup(){
+  size(100, 100);
+  aka = color(255, 0, 0);
+  t = new Taiko_note(aka, 40);
+}
+
+void draw(){
+  t.show();
+}
+
+
+
+Taiko_noteタブ
+
+class Taiko_note {
+  
+  color t_color;
+    int      wh;
+  
+  Taiko_note(color taiko_color, int width_height) {
+    
+    t_color = taiko_color;
+         wh = width_height;
+    
+  }
+
+  void show() {
+    ellipse(width/2, height/2, wh + 10, wh + 10); //後ろの円(縁)
+    fill(t_color); //赤
+    ellipse(width/2, height/2, wh, wh); //手前の円(面)
+    fill(0); //黒
+    ellipse(width/2 - 8, height/2, wh/6, wh/6); //左側の目
+    ellipse(width/2 + 9, height/2, wh/6, wh/6); //右側の目
+    noFill(); //色なし
+    arc(width/2 - 3, height/2 + 2, wh/3, wh/3, PI/4, 3*PI/4); //左側の口
+    arc(width/2 + 5, height/2 + 2, wh/3, wh/3, PI/4, 3*PI/4); //右側の口
+  }
+}
