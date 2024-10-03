@@ -1,0 +1,6 @@
+void Result(){
+  text("ここはリザルト画面です。", 50, 50);
+  if(keyPressed && key == ' '){
+    scene = 1;
+  }
+}

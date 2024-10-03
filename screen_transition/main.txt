@@ -1,0 +1,19 @@
+  int scene;
+PFont font;
+
+void setup(){
+  size(480, 480);  
+  scene = 1;
+  font = createFont("MS-Gothic-48.vlw", 20);
+}
+
+void draw(){
+  fill(255);
+  background(0);
+  textFont(font);  
+  switch(scene){
+    case 1:  Title(); break;
+    case 2:   Game(); break;
+    case 3: Result(); break;
+  }
+}

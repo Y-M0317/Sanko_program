@@ -1,0 +1,7 @@
+void Title(){
+  text("ここはタイトル画面です。", 50, 50);
+  
+  if(mousePressed){
+    scene++;
+  }
+}
