@@ -1,0 +1,60 @@
+float x, y, vx, vy;
+int px, count, time, base_time;
+boolean start;
+
+void setup() {
+  size(480, 480);
+  x = width/2;
+  y = height/2;
+  vx = random(2, 4);
+  vy = random(2, 4);
+  px =  width/2;
+  time = 0;
+  base_time = 0;
+}
+
+void draw() {
+  textAlign(CENTER);
+  textSize(40);
+  text("Please press any key!", width/2, height/2);
+  
+  if (start == true) {
+    textAlign(LEFT);
+    background(255);
+    ellipse(x, y, 10, 10);
+    x += vx;
+    y += vy;
+
+    if (x > width || x < 0)
+      vx = -vx;
+    if (y > height || y < 0)
+      vy = -vy;
+
+    rect(px, 9*height/10, 30, 5);
+    fill(0);
+    textSize(10);
+    text("point:" + count, 0, 20);
+
+    if (keyPressed)
+      switch(keyCode) {
+      case  LEFT: 
+        px -= 3; 
+        break;
+      case RIGHT: 
+        px += 3; 
+        break;
+      }
+
+    if (x > px && x < px + 30 && y < 9*height/10 + 5 && y > 9*height/10) {
+      vy = -vy;
+      count++;
+    }
+
+    time = second();
+  }
+}
+
+void keyTyped() {
+  base_time = second();
+  start = true;
+}
